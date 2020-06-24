@@ -15,7 +15,7 @@ def cycle_sort(array, swaps)
         end
 
         if position != cycle_start
-            while number_to_swap == array[position]
+            while number_to_swap == array[position]y
                 position += 1
             end
             
