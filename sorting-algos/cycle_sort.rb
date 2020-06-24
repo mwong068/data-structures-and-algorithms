@@ -1,60 +1,53 @@
-def cycle_sort(array, writes)
-    writes = 0
-    cycleStart = 0
+def cycle_sort(array, swaps)
+    swaps = 0
+    cycle_start = 0
 
-    # [26, 42, 48, 68, 79]
-    # cycleStart = 3
-    # item = 48
-    # pos = 4
-    # i = 4
-    # writes = 2
+    while cycle_start < array.length - 1
+        number_to_swap = array[cycle_start]
+        position = cycle_start
 
-    while cycleStart < array.length - 1
-        item = array[cycleStart]
-        pos = cycleStart
-
-        i = cycleStart + 1
+        i = cycle_start + 1
         while i < array.length
-            if array[i] < item
-                pos += 1
+            if array[i] < number_to_swap
+                position += 1
             end
             i += 1
         end
 
-        if pos != cycleStart
-            while item == array[pos]
-                pos += 1
+        if position != cycle_start
+            while number_to_swap == array[position]
+                position += 1
             end
             
-            array[pos], item = item, array[pos]
-            writes += 1
+            array[position], number_to_swap = number_to_swap, array[position]
+            swaps += 1
         end
 
-        while pos != cycleStart
-            pos = cycleStart
+        while position != cycle_start
+            position = cycle_start
 
-            j = cycleStart + 1
+            j = cycle_start + 1
             while j < array.length - 1
-                if array[j] < item
-                    pos += 1
+                if array[j] < number_to_swap
+                    position += 1
                 end
 
-                while item == array[pos]
-                    pos += 1
+                while number_to_swap == array[position]
+                    position += 1
                 end
 
                 j += 1
             end
-            
-            array[pos], item = item, array[pos]
-            writes += 1
+
+            array[position], number_to_swap = number_to_swap, array[position]
+            swaps += 1
         end
 
-        cycleStart += 1
+        cycle_start += 1
     end
         
-    return array, writes
+    return array, swaps
 
 end
 
-print(cycle_sort([26, 68, 79, 42, 48], [0]))
+print(cycle_sort([120, 20, 12, 1, 5, 5, 78], [0]))
