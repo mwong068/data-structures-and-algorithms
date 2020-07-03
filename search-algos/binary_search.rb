@@ -81,3 +81,34 @@ def binary_search(target, nums)
   ]
   
   puts find_rotation_point(words)
+
+
+  # Search Input Position (Leetcode #35)
+  def search_input_position(array, target)
+    start = 0
+    ending = array.length - 1
+    # mid = (start + ending)/2
+    while start + 1 < ending
+      mid = start + (ending - start) / 2
+      if array[mid] == target
+        return mid
+      elsif array[mid] < target
+        start = mid
+      else
+        # array[mid] > target
+       ending = mid 
+      end
+    end
+
+    if array[ending] < target
+      return ending + 1
+    elsif array[start] >= target
+      return start
+    else
+      # array[start] < target < array[ending]
+      return ending
+    end
+
+  end
+
+  puts search_input_position([1, 3, 4, 5, 6, 8, 10, 15], 5)
