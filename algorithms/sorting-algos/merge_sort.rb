@@ -55,3 +55,35 @@ def merge_sort(array, sorted_left, sorted_right)
   
   try = [2, 35]
   breakdown(try)
+
+
+  # def merged_sorted_arrays(arr1, arr2)
+#   merged_array = []
+#   merged_array_size = arr1.length + arr2.length
+
+#   arr1_count = 0
+#   arr2_count = 0
+#   merged_array_count = 0
+
+#   while merged_array_count < merged_array_size
+#     if arr1_count >= arr1.length || arr1[arr1_count] > arr2[arr2_count] 
+#       merged_array[merged_array_count] = arr2[arr2_count]
+#       arr2_count += 1
+#     elsif
+#       arr2_count >= arr2.length || merged_array[merged_array_count] = arr1[arr1_count]
+#       arr1_count +=1
+#     end
+
+#     merged_array_count += 1
+#   end
+
+#   return merged_array
+# end
+
+
+# first = [3, 4, 6, 10, 11, 15]  # arr1
+# second = [5, 8, 12, 14, 19]      # arr2
+
+# merged_sorted_arrays(first, second)
+
+# # [3, 4, 5, 6, 8, 10, 11, 12, 14, 15 ] #merged_array

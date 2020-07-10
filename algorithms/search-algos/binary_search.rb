@@ -36,7 +36,7 @@ def binary_search(target, nums)
     false
   end
   
-  
+  # ----------------------------------------------------------------------
   
   def find_rotation_point(words)
     first_word = words.first
@@ -83,6 +83,7 @@ def binary_search(target, nums)
   puts find_rotation_point(words)
 
   
+# ----------------------------------------------------------------------------------
 
   # Search Input Position (Leetcode #35)
   def search_input_position(array, target)
