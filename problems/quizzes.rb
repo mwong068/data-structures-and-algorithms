@@ -69,9 +69,9 @@ def subsequences(string)
         j = i
         while j < string.length
             substring = string[i..j]
-            if answers[substring] === nil
+            # if answers[substring] === nil
                 result.push(substring)
-            end
+            # end
             j += 1
         end
     end
@@ -80,4 +80,4 @@ def subsequences(string)
 
 end
 
-puts subsequences("abcde")
+puts subsequences("ab")
