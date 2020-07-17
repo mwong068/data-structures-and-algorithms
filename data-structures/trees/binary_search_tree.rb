@@ -16,7 +16,7 @@ class BinaryTreeNode
     end
   end
 
-  # check if BST is a BST
+  # check if BST is BST
 
   def push_node(root, value)
     if value > root.value
@@ -60,4 +60,28 @@ class BinaryTreeNode
     push_node(root, node)
   end
 
-  traverse(root)
+  # traverse(root)
+
+  # check if BST is a BST - interview cake
+
+  def is_binary_tree?(root)
+
+    stack = []
+    stack.push([root, -Float::INFINITY, Float::INFINITY])
+
+    until stack.empty?
+      node, lower_bounds, upper_bounds = stack.pop
+
+      if node.value <= lower_bounds || node.value >= upper_bounds
+        return false
+      elsif node.left
+        stack.push([node.left, lower_bounds, node.value])
+      elsif node.right
+        stack.push([node.right, node.value, upper_bounds])
+      end
+    end
+
+    return true
+  end
+
+ puts is_binary_tree?(root)
