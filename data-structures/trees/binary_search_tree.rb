@@ -60,7 +60,7 @@ class BinaryTreeNode
     push_node(root, node)
   end
 
-  # traverse(root)
+  traverse(root)
 
   # check if BST is a BST - interview cake
 
@@ -85,3 +85,76 @@ class BinaryTreeNode
   end
 
  puts is_binary_tree?(root)
+
+
+def delete_node(root, value)
+  parent = nil
+  current = root
+  
+  while current and current.value != value
+    parent = current
+    
+    if value < current.value
+      current = current.left
+    else
+      current = current.right
+    end
+
+    if current == nil
+      return root
+    end
+  end
+
+  # leaf node with no children
+  if current.left == nil and current.right == nil
+    if current != root
+      if parent.left == current
+        parent.left = nil
+      else
+        parent.right = nil
+      end
+    else
+      root = nil
+    end
+  
+  # node has two children
+  elsif current.left and current.right
+    successor = minimum_key(current.right)
+    value = successor.value
+    delete_node(root, value)
+    current.value = value
+
+  # node has one child 
+  else
+    if current.left
+      child = current.left
+    else
+      child = current.right
+    end
+
+    if current != root
+      if current == parent.left
+        parent.left = child
+      else
+        parent.right = child
+      end
+    else
+      root = child
+    end
+  end
+
+  return root
+
+end
+
+puts delete_node(root, 2)
+
+traverse(root)
+
+def minimum_key(node)
+  while node.left
+    current = node.left
+  end
+    
+  return current
+end
