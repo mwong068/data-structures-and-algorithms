@@ -2,7 +2,18 @@
 
 # Longest Common Prefix
 
-def longestCommonPrefix(self, strs: List[str]) -> str:
+# Example 1:
+
+# Input: ["flower","flow","flight"]
+# Output: "fl"
+
+# Example 2:
+
+# Input: ["dog","racecar","car"]
+# Output: ""
+# Explanation: There is no common prefix among the input strings.
+
+def longestCommonPrefix(strs):
 # =============Brute Force solution================================================================
 #     iterate over each word and put into hash beginning strings of letters
 #     iterate over hash and see if any combo has the same number in value as length of array
@@ -42,6 +53,28 @@ def longestCommonPrefix(self, strs: List[str]) -> str:
 # =============Optimal solution================================================================
 # find smallest word
 # compare that word, letter by letter to all other words
+    longest_common_prefix = ""
 
+    if (len(strs) == 0 or strs is None):
+        return longest_common_prefix
 
-    return 
+    # finds shortest string in list
+    # shortest_word = min(strs, key=len)
+    # shortest_word_index = strs.index(shortest_word)
+    # print(shortest_word_index)
+
+    first_word = [char for char in strs[0]]
+    i = 0
+    for letter in first_word:
+        for j in range(1, len(strs)):
+            if(i >= len(first_word) or strs[j][i] != letter):
+                return longest_common_prefix
+        longest_common_prefix += letter
+        i += 1
+        
+    return longest_common_prefix
+
+array2 = ["ab", "abc", "aa", "fff", "gdfgfdg","a", "bbb"]
+array3 = ["flower", "flow", "flight"]
+array = []
+print(longestCommonPrefix(array3))
