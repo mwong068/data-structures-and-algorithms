@@ -59,15 +59,22 @@ def longestCommonPrefix(strs):
         return longest_common_prefix
 
     # finds shortest string in list
-    # shortest_word = min(strs, key=len)
+    shortest_word = min(strs, key=len)
     # shortest_word_index = strs.index(shortest_word)
     # print(shortest_word_index)
 
-    first_word = [char for char in strs[0]]
+    # first_word = [char for char in strs[0]]
+    # i = 0
+    # for letter in first_word:
+    #     for j in range(1, len(strs)):
+    #         if(i >= len(first_word) or strs[j][i] != letter):
+    #             return longest_common_prefix
+    #     longest_common_prefix += letter
+    #     i += 1
     i = 0
-    for letter in first_word:
-        for j in range(1, len(strs)):
-            if(i >= len(first_word) or strs[j][i] != letter):
+    for letter in shortest_word:
+        for j in range(0, len(strs)):
+            if(i >= len(shortest_word) or strs[j][i] != letter):
                 return longest_common_prefix
         longest_common_prefix += letter
         i += 1
@@ -76,5 +83,14 @@ def longestCommonPrefix(strs):
 
 array2 = ["ab", "abc", "aa", "fff", "gdfgfdg","a", "bbb"]
 array3 = ["flower", "flow", "flight"]
-array = []
-print(longestCommonPrefix(array3))
+array = ["aa", "a"]
+
+print(longestCommonPrefix(array2))
+
+# first_word = ["a", "a"]
+# i = 1
+# letter = "a"
+# j = 2
+# 1 >= 2 or a != a
+# longestCommonPrefix = a
+# ["aa", "a"]
