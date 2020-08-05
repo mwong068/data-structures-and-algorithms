@@ -63,14 +63,6 @@ def longestCommonPrefix(strs):
     # shortest_word_index = strs.index(shortest_word)
     # print(shortest_word_index)
 
-    # first_word = [char for char in strs[0]]
-    # i = 0
-    # for letter in first_word:
-    #     for j in range(1, len(strs)):
-    #         if(i >= len(first_word) or strs[j][i] != letter):
-    #             return longest_common_prefix
-    #     longest_common_prefix += letter
-    #     i += 1
     i = 0
     for letter in shortest_word:
         for j in range(0, len(strs)):
