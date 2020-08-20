@@ -38,6 +38,7 @@ def permutations(string)
 
 end
 
+# python solution
 def toString(List): 
     return ''.join(List) 
   
