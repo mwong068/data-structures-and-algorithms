@@ -22,5 +22,19 @@ def max_sub_array(nums)
     return largest_sum
 end
 
+def max_sub_array(nums)
+
+    i = 1
+    while i < nums.length
+        if nums[i-1] > 0
+            nums[i] += nums[i-1]
+        end
+        i += 1
+    end
+    
+    return nums.max
+end
+
 testing = [-2,1,-3,4,-1,2,1,-5,4]
 puts max_sub_array(testing)
+
