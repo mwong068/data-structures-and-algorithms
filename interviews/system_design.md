@@ -10,4 +10,6 @@ https://gist.github.com/vasanthk/485d1c25737e8e72759f
    - front end
    - back end
    - database
+     - sql
+     - oop / database schema
 5. Revisit scaling for the more built out app / api
