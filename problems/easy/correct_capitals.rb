@@ -1,4 +1,6 @@
 def detect_capital_use(word)
+
+    # working solution ==========================================================================
     
     whole_capital = false
     no_caps = false
@@ -41,4 +43,17 @@ def detect_capital_use(word)
     end
     
  return true
+
+#  optimal solution ==========================================================
+
+    if word.length == 1
+        return true
+    end
+    
+    if word.capitalize == word || word.downcase == word || word.upcase == word
+        return true
+    else
+        return false
+    end
+
 end
