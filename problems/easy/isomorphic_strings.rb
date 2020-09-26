@@ -21,40 +21,34 @@
 # Input: s = "paper", t = "title"
 # Output: true
 
+require 'set'
+
 def is_isomorphic(s, t)
-    s_hash = {}
-    s_array = []
-    t_hash = {}
-    t_array = []
-    
-    s.each_char do |letter|
-        if s_hash[letter]
-            s_hash[letter] += 1
-        else
-            s_hash[letter] = 1
-        end
-    end
-    
-    t.each_char do |letter|
-        if t_hash[letter]
-            t_hash[letter] += 1
-        else
-            t_hash[letter] = 1
-        end
-    end
-    
-    s_hash.each do |key, value|
-        s_array.push(value)
-    end
-    
-     t_hash.each do |key, value|
-        t_array.push(value)
-    end
-    
-    if s_array == t_array
-        return true
-    else
+
+    if s.length != t.length
         return false
     end
+    
+    hash = {}
+    
+    i = 0
+    while i < s.length
+        if !hash[s[i]]
+            hash[s[i]] = t[i]
+        else
+            if hash[s[i]] != t[i]
+                return false
+            end
+        end
+        i += 1
+    end
+    
+    results = Set.new
+    
+    hash.each do |key, value|
+        results << value
+    end
+    
+    return results.size == hash.size
     
 end
