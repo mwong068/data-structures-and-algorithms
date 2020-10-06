@@ -1,6 +1,7 @@
 Input:
 1
 TWLO
+
 5
 +14157088956
 +15109926333
@@ -34,6 +35,11 @@ def vanity(codes, numbers)
 end
 
 def translate(code)
+    # method 1
+    phone_values = [0, 1, "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+    
+
+    # method 2
     values = {
         "A" => "2", "B" => "2", "C" => "2",
         "D" => "3", "E" => "3", "F" => "3",
