@@ -18,4 +18,6 @@ def letter_code(string)
             end        
         end
     end
+
+    return total
 end
