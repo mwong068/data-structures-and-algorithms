@@ -17,6 +17,7 @@ def letter_code(string)
                 total += 1
             end        
         end
+        i += 1
     end
 
     return total
