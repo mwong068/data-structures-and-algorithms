@@ -5,8 +5,19 @@
 
 def username_creator(array)
     username_hash = {}
+    results = []
+
     array.each do |username|
         if username_hash[username]
+            username += 1
+        else
+            username_hash[username] = 1
         end
     end
+
+    username_hash.each do |key, value|
+        results.push(key)
+    end
+
+    return results
 end
