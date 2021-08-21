@@ -15,7 +15,6 @@
 
 # Input: s = "()[]{}"
 # Output: true
-
 # keep track of the pairs of parentheses
 # 
 def is_valid(s)
@@ -25,10 +24,11 @@ def is_valid(s)
         if symbols[letter]
             stack.push(symbols[letter]) 
         else
-            if symbols
+            return false
         end
     end
-
+    stack.each do |things|
+    end
     puts stack
 end
 
