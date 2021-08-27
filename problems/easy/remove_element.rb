@@ -17,12 +17,15 @@
 # @return {Integer}
 def remove_element(nums, val)
     i = 0
-    while i < nums.length-1 do
+    while i < nums.length do
         if nums[i] == val
-            puts nums[i]
             nums[i] = nil
         end
         i += 1
     end
     nums.compact!
+    nums.length
 end
+
+test = [0,1,2,2,3,0,4,2]
+puts remove_element(test, 2)
