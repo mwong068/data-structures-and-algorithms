@@ -2,8 +2,6 @@
 
 # A word is a maximal substring consisting of non-space characters only.
 
- 
-
 # Example 1:
 
 # Input: s = "Hello World"
@@ -20,6 +18,13 @@
 # Output: 6
 # Explanation: The last word is "joyboy" with length 6.
 
+# split the string into an array
+# take the last element of the array
+# loop over that element and count the letters
 def length_of_last_word(string)
-    
+    words = string.split(" ")
+    return words[-1].length
 end
+
+s = "luffy is still joyboy"
+length_of_last_word(s)
