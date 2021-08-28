@@ -19,7 +19,7 @@
 # 
 def is_valid(s)
     symbols = { "(" => ")", "{" => "}", "[" => "]" }
-    starting = "([{"
+    # starting = "([{"
     stack = []
     # s.each_char do |letter|
     #     if symbols[letter]
@@ -31,28 +31,49 @@ def is_valid(s)
     # end
     # puts stack
     
-    s.each_char do |thing|
-        if starting.include?(thing)
-            stack.push(thing)
+    # s.each_char do |thing|
+    #     if starting.include?(thing)
+    #         stack.push(thing)
+    #     end
+    # end
+
+    # stack.each do |test|
+    #     if symbols[test]
+    #         puts symbols[test]
+    #         stack.pop()
+    #     end
+    # end
+
+    # print stack
+
+    # if stack.length != 0
+    #     return false
+    # else
+    #     return true
+    # end
+
+    s.each_char do |item|
+        if symbols[item]
+            stack.push(symbols[item])
+        else
+            puts stack[-1]
+            if item == stack[-1]
+                stack.pop()
+            else
+                stack.push(item)
+            end
         end
     end
 
-    stack.each do |test|
-        if symbols[test]
-            puts symbols[test]
-            stack.pop()
-        end
-    end
+    p stack
 
-    print stack
-
-    if stack.length != 0
-        return false
-    else
+    if stack.empty?
         return true
+    else
+        return false
     end
 
 end
 
-string = "([])"
+string = "([}}])"
 puts is_valid(string)
