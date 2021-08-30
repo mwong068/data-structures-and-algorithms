@@ -56,8 +56,9 @@ def is_valid(s)
         if symbols[item]
             stack.push(symbols[item])
         else
-            puts stack[-1]
             if item == stack[-1]
+                # checks to see if item is the same as the last element pushed on to stack, but can be recognized if there are two of the same ending element, i.e. }}, which is incorrect
+                puts item
                 stack.pop()
             else
                 stack.push(item)
@@ -65,13 +66,7 @@ def is_valid(s)
         end
     end
 
-    p stack
-
-    if stack.empty?
-        return true
-    else
-        return false
-    end
+    return stack.empty?
 
 end
 
